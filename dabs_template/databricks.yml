@@ -19,12 +19,29 @@ targets:
     workspace:
       host: https://dbc-60696431-bb09.cloud.databricks.com
 
+  tst:
+    mode: production
+    workspace:
+      host: https://dbc-60696431-bb09.cloud.databricks.com
+      root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
+    permissions:
+      - user_name: brian.labrom@yahoo.com
+        level: CAN_MANAGE
+
+  pre-prod:
+    mode: production
+    workspace:
+      host: https://dbc-60696431-bb09.cloud.databricks.com
+      root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
+    permissions:
+      - user_name: brian.labrom@yahoo.com
+        level: CAN_MANAGE
+
   prod:
     mode: production
     workspace:
       host: https://dbc-60696431-bb09.cloud.databricks.com
-      # We explicitly deploy to /Workspace/Users/brian.labrom@yahoo.com to make sure we only have a single copy.
-      root_path: /Workspace/Users/brian.labrom@yahoo.com/.bundle/${bundle.name}/${bundle.target}
+      root_path: /Workspace/Shared/.bundle/${bundle.name}/${bundle.target}
     permissions:
       - user_name: brian.labrom@yahoo.com
         level: CAN_MANAGE
