@@ -1,0 +1,5 @@
+targets:
+  tst:
+    variables:
+        catalog: dabs_tst
+        schema: test

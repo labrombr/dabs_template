@@ -8,7 +8,7 @@ resources:
       tasks:
         - task_key: notebook_task
           notebook_task:
-            notebook_path: ../notebooks/Simple notebook.py
+            notebook_path: ../notebooks/Simple notebook.ipynb
             
       parameters:
         - name: catalog
