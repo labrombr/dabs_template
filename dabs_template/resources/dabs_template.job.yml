@@ -9,9 +9,12 @@ resources:
         - task_key: notebook_task
           notebook_task:
             notebook_path: ../notebooks/Simple notebook.ipynb
+      
+      tags:
+        env: ${var.schema}
             
       parameters:
         - name: catalog
-          default: dabs_dev
+          default: ${var.catalog}
         - name: schema
-          default: development
+          default: ${var.schema}

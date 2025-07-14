@@ -22,13 +22,10 @@ targets:
       host: https://dbc-60696431-bb09.cloud.databricks.com
 
   tst:
-    variables:
-      catalog: dabs_tst
-      schema: test
     mode: production
     workspace:
       host: https://dbc-60696431-bb09.cloud.databricks.com
-      root_path: /Workspace/Shared/${bundle.target}/.bundle/${bundle.name}
+      root_path: /Workspace/BundleStore/${bundle.target}/.bundle/${bundle.name}
     permissions:
       - user_name: brian.labrom@yahoo.com
         level: CAN_MANAGE
@@ -37,7 +34,7 @@ targets:
     mode: production
     workspace:
       host: https://dbc-60696431-bb09.cloud.databricks.com
-      root_path: /Workspace/Shared/${bundle.target}/.bundle/${bundle.name}
+      root_path: /Workspace/BundleStore/${bundle.target}/.bundle/${bundle.name}
     permissions:
       - user_name: brian.labrom@yahoo.com
         level: CAN_MANAGE
@@ -46,7 +43,7 @@ targets:
     mode: production
     workspace:
       host: https://dbc-60696431-bb09.cloud.databricks.com
-      root_path: /Workspace/Shared/${bundle.target}/.bundle/${bundle.name}
+      root_path: /Workspace/BundleStore/${bundle.target}/.bundle/${bundle.name}
     permissions:
       - user_name: brian.labrom@yahoo.com
         level: CAN_MANAGE
