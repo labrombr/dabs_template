@@ -1,0 +1,9 @@
+targets:
+  tst:
+    variables:
+      catalog:
+        description: name of catalog
+        default: dabs_tst
+      schema:
+        description: name of schema
+        default: test

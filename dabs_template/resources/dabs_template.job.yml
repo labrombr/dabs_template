@@ -1,0 +1,20 @@
+# The main job for dabs_template.
+resources:
+  jobs:
+    
+    dabs_template_job:
+      name: dabs_template_job
+
+      tasks:
+        - task_key: notebook_task
+          notebook_task:
+            notebook_path: ../notebooks/Simple notebook.ipynb
+      
+      tags:
+        env: ${var.schema}
+            
+      parameters:
+        - name: catalog
+          default: ${var.catalog}
+        - name: schema
+          default: ${var.schema}

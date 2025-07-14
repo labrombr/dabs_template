@@ -1,0 +1,49 @@
+# This is a Databricks asset bundle definition for dabs_template.
+# See https://docs.databricks.com/dev-tools/bundles/index.html for documentation.
+bundle:
+  name: dabs_template
+  uuid: c054ac55-7cc1-4731-933a-0b5fc5d1c2ee
+
+include:
+  - resources/*.yml
+  - resources/*/*.yml
+  # added this to support overrides in a separate folder
+  - conf/*.yml
+
+targets:
+  dev:
+    # The default target uses 'mode: development' to create a development copy.
+    # - Deployed resources get prefixed with '[dev my_user_name]'
+    # - Any job schedules and triggers are paused by default.
+    # See also https://docs.databricks.com/dev-tools/bundles/deployment-modes.html.
+    mode: development
+    default: true
+    workspace:
+      host: https://dbc-60696431-bb09.cloud.databricks.com
+
+  tst:
+    mode: production
+    workspace:
+      host: https://dbc-60696431-bb09.cloud.databricks.com
+      root_path: /Workspace/BundleStore/${bundle.target}/.bundle/${bundle.name}
+    permissions:
+      - user_name: brian.labrom@yahoo.com
+        level: CAN_MANAGE
+
+  pre-prod:
+    mode: production
+    workspace:
+      host: https://dbc-60696431-bb09.cloud.databricks.com
+      root_path: /Workspace/BundleStore/${bundle.target}/.bundle/${bundle.name}
+    permissions:
+      - user_name: brian.labrom@yahoo.com
+        level: CAN_MANAGE
+
+  prod:
+    mode: production
+    workspace:
+      host: https://dbc-60696431-bb09.cloud.databricks.com
+      root_path: /Workspace/BundleStore/${bundle.target}/.bundle/${bundle.name}
+    permissions:
+      - user_name: brian.labrom@yahoo.com
+        level: CAN_MANAGE

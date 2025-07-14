@@ -1,0 +1,7 @@
+variables:
+  catalog:
+    description: name of catalog
+    default: dabs_dev
+  schema:
+    description: name of schema
+    default: development

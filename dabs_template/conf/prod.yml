@@ -1,0 +1,9 @@
+targets:
+  prod:
+    variables:
+      catalog:
+        description: name of catalog
+        default: dabs_prd
+      schema:
+        description: name of schema
+        default: production
