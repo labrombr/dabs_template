@@ -3,3 +3,15 @@ on:
 env:
   # Setting an environment variable with the value of a configuration variable
   env_var: dbx_dabs_tst
+
+jobs:
+  show-vars:
+    name: job-vars
+    runs-on: ubuntu-latest
+    environment: dbx_dabs_tst
+    steps:
+    - name: show-vars
+      run: |
+        echo "my org var : $TESTVAR"
+      env: 
+        TESTVAR: ${{ vars.DATABRICKS_TOKEN }}
