@@ -1,3 +1,4 @@
+name: test_vars
 on:
   workflow_dispatch:
 env:
