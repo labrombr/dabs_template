@@ -12,6 +12,8 @@ jobs:
     steps:
     - name: show-vars
       run: |
-        echo "my org var : $TESTVAR"
+        echo "my org secret : $TESTSECRET"
+        echo "my org var: $orgvar
       env: 
-        TESTVAR: ${{ secrets.DATABRICKS_TOKEN }}
+        TESTSECRET: ${{ secrets.DATABRICKS_TOKEN }}
+        orgvar: ${{ vars.TEST_ENV_VAR }}
