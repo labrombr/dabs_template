@@ -1,0 +1,13 @@
+on:
+  workflow_dispatch:
+
+jobs:
+  display-vars:
+    name: hello-world
+    environment: dbx-dabs-tst
+    steps: 
+    - name: Use vars
+      run: |
+        echo "org var : $org_var"
+      env: 
+        org_var: ${{ vars.DATABRICKS_TOKEN }}
