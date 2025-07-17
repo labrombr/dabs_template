@@ -14,4 +14,4 @@ jobs:
         echo "my org var: $orgvar"
       env: 
         TESTSECRET: ${{ secrets.DATABRICKS_TOKEN }}
-        orgvar: ${{ vars.TEST_ENV_VAR }}
+        orgvar: ${{ vars.PRE_VAR }}
