@@ -9,7 +9,7 @@ jobs:
   show-vars:
     name: job-vars
     runs-on: ubuntu-latest
-    environment: dbx_dabs_tst
+    environment: dbx_dabs_pre
     steps:
     - name: show-vars
       run: |
