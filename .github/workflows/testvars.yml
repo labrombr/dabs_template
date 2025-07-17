@@ -14,4 +14,4 @@ jobs:
       run: |
         echo "my org var : $TESTVAR"
       env: 
-        TESTVAR: ${{ vars.DATABRICKS_TOKEN }}
+        TESTVAR: ${{ secrets.DATABRICKS_TOKEN }}
